@@ -9,10 +9,10 @@ This Code Book will give descriptions about the transformations on the original 
 This data set shows the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and activities these subjects performed. There are 6 possible activities each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, or WALKINGUPSTAIRS. There were 30 total subjects. Therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the activity being performed, and the 79 motion metrics measured. Each motion metric is an average of the measurements from the original raw data. There were 10,299 distinct rows in the first data set before all the metrics were averaged to get 180 rows.  
 
 
-##More About the Variables
+###More About the Variables
 Here is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the original raw format to the tidy data set.
 
-###The following variables (Subjects and Action Performing) are the dimensions by which the metrics are grouped. 
+#####The following variables (Subjects and Action Performing) are the dimensions by which the metrics are grouped. 
 1 Subjects - The individuals participating in the study. It is a unique identifier for the individual.
 2	ActionPerforming - The action the person is performing in the study. The options are: 
 * LAYING 
@@ -22,7 +22,7 @@ Here is the long list of variables included in the tidy dataset. There are more 
 * SITTING
 * STANDING
 
-###The following metrics are grouped by subject and ActionPerforming. These metrics are averages of the original data set. Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. 
+#####The following metrics are grouped by subject and ActionPerforming. These metrics are averages of the original data set. Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. 
 * 3	tBodyAccmeanX
 * 4	tBodyAccmeanY
 * 5	tBodyAccmeanZ
