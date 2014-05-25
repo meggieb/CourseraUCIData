@@ -2,10 +2,102 @@
 
 ##Variables and Data Description
 ### The Tidy Data Set
-This data set shows the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and tasks these subjects performed. There are 6 possible actions each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, WALKINGUPSTAIRS. There were 30 total subjects. Therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the action being performed, and the 79 motion metrics measured. Each motion metric is an average of the measurements in the raw data. There were 10,299 rows in the first data set before all the metrics were averaged to get 180 rows.  
+This data set shows the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and tasks these subjects performed. There are 6 possible actions each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, WALKINGUPSTAIRS. There were 30 total subjects. Therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the action being performed, and the 79 motion metrics measured. Each motion metric is an average of the measurements in the raw data. There were 10,299 distinct rows in the first data set before all the metrics were averaged to get 180 rows.  
 
 
 ##More About the Variables
+Here is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the raw format in the zip file.
+###The following variables (Subjects and Action Performing) are the dimensions by which the metrics are grouped. 
+1 Subjects - The individuals participating in the study. It is a unique identifier for the individual.
+2	ActionPerforming - The action the person is performing in the study. The options are: 
+* LAYING 
+* WALKING 
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+
+###The following metrics are grouped by subject and actionperforming. These metrics are averages of the original data set. Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. The reason for choosing only 79 variables is because these are the means and standard deviation metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well.
+3	tBodyAccmeanX
+4	tBodyAccmeanY
+5	tBodyAccmeanZ
+6	tBodyAccstdX
+7	tBodyAccstdY
+8	tBodyAccstdZ
+9	tGravityAccmeanX
+10	tGravityAccmeanY
+11	tGravityAccmeanZ
+12	tGravityAccstdX
+13	tGravityAccstdY
+14	tGravityAccstdZ
+15	tBodyAccJerkmeanX
+16	tBodyAccJerkmeanY
+17	tBodyAccJerkmeanZ
+18	tBodyAccJerkstdX
+19	tBodyAccJerkstdY
+20	tBodyAccJerkstdZ
+21	tBodyGyromeanX
+22	tBodyGyromeanY
+23	tBodyGyromeanZ
+24	tBodyGyrostdX
+25	tBodyGyrostdY
+26	tBodyGyrostdZ
+27	tBodyGyroJerkmeanX
+28	tBodyGyroJerkmeanY
+29	tBodyGyroJerkmeanZ
+30	tBodyGyroJerkstdX
+31	tBodyGyroJerkstdY
+32	tBodyGyroJerkstdZ
+33	tBodyAccMagmean
+34	tBodyAccMagstd
+35	tGravityAccMagmean
+36	tGravityAccMagstd
+37	tBodyAccJerkMagmean
+38	tBodyAccJerkMagstd
+39	tBodyGyroMagmean
+40	tBodyGyroMagstd
+41	tBodyGyroJerkMagmean
+42	tBodyGyroJerkMagstd
+43	fBodyAccmeanX
+44	fBodyAccmeanY
+45	fBodyAccmeanZ
+46	fBodyAccstdX
+47	fBodyAccstdY
+48	fBodyAccstdZ
+49	fBodyAccmeanFreqX
+50	fBodyAccmeanFreqY
+51	fBodyAccmeanFreqZ
+52	fBodyAccJerkmeanX
+53	fBodyAccJerkmeanY
+54	fBodyAccJerkmeanZ
+55	fBodyAccJerkstdX
+56	fBodyAccJerkstdY
+57	fBodyAccJerkstdZ
+58	fBodyAccJerkmeanFreqX
+59	fBodyAccJerkmeanFreqY
+60	fBodyAccJerkmeanFreqZ
+61	fBodyGyromeanX
+62	fBodyGyromeanY
+63	fBodyGyromeanZ
+64	fBodyGyrostdX
+65	fBodyGyrostdY
+66	fBodyGyrostdZ
+67	fBodyGyromeanFreqX
+68	fBodyGyromeanFreqY
+69	fBodyGyromeanFreqZ
+70	fBodyAccMagmean
+71	fBodyAccMagstd
+72	fBodyAccMagmeanFreq
+73	fBodyBodyAccJerkMagmean
+74	fBodyBodyAccJerkMagstd
+75	fBodyBodyAccJerkMagmeanFreq
+76	fBodyBodyGyroMagmean
+77	fBodyBodyGyroMagstd
+78	fBodyBodyGyroMagmeanFreq
+79	fBodyBodyGyroJerkMagmean
+80	fBodyBodyGyroJerkMagstd
+81	fBodyBodyGyroJerkMagmeanFreq
+
 This data was gathered from research that was performed at UCI. Most of the variable descriptions come from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
 and the READ.ME and features_info.txt file in the following link (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). 
 
@@ -36,7 +128,7 @@ Out of the 10 files mentioned, four were used for explanation. These were
 
 Six of these files were the raw data files: 2 X files, 2 Y files, and 2 subject files. These files are not duplicates - the reason for the 2 of each were that 1 was a training set and the other was a test set. They needed to be combined into 1 set. 
 
-In order to combine them into 1 set, first the training data was combined together with cbind. The X_test data to the y_test data to the subject_test data.
+In order to combine them into 1 set, first the training data set (X_train.txt,y_train.txt, subject_train.txt) was combined together. The X_test data to the y_test data to the subject_test data.
 * X_test.txt - 
 * y_test.txt 
 * subject_test.txt -
