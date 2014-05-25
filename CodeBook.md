@@ -1,12 +1,17 @@
 #This is the code book 
+This data was gathered from research that was performed at UCI. Most of the variable descriptions come from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
+and the READ.ME and features_info.txt file in the following link (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). 
+
+This Code Book will give descriptions about the transformations on the original data as the links above do a great job explaining the details of how the data was collected. 
 
 ##Variables and Data Description
 ### The Tidy Data Set
-This data set shows the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and tasks these subjects performed. There are 6 possible actions each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, WALKINGUPSTAIRS. There were 30 total subjects. Therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the action being performed, and the 79 motion metrics measured. Each motion metric is an average of the measurements in the raw data. There were 10,299 distinct rows in the first data set before all the metrics were averaged to get 180 rows.  
+This data set shows the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and activities these subjects performed. There are 6 possible activities each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, or WALKINGUPSTAIRS. There were 30 total subjects. Therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the activity being performed, and the 79 motion metrics measured. Each motion metric is an average of the measurements from the original raw data. There were 10,299 distinct rows in the first data set before all the metrics were averaged to get 180 rows.  
 
 
 ##More About the Variables
-Here is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the raw format in the zip file.
+Here is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the original raw format to the tidy data set.
+
 ###The following variables (Subjects and Action Performing) are the dimensions by which the metrics are grouped. 
 1 Subjects - The individuals participating in the study. It is a unique identifier for the individual.
 2	ActionPerforming - The action the person is performing in the study. The options are: 
@@ -17,30 +22,30 @@ Here is the long list of variables included in the tidy dataset. There are more 
 * SITTING
 * STANDING
 
-###The following metrics are grouped by subject and actionperforming. These metrics are averages of the original data set. Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. The reason for choosing only 79 variables is because these are the means and standard deviation metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well.
+###The following metrics are grouped by subject and ActionPerforming. These metrics are averages of the original data set. Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. 
 * 3	tBodyAccmeanX
 * 4	tBodyAccmeanY
 * 5	tBodyAccmeanZ
 * 6	tBodyAccstdX
 * 7	tBodyAccstdY
 * 8	tBodyAccstdZ
-9	tGravityAccmeanX
-10	tGravityAccmeanY
-11	tGravityAccmeanZ
-12	tGravityAccstdX
-13	tGravityAccstdY
-14	tGravityAccstdZ
-15	tBodyAccJerkmeanX
-16	tBodyAccJerkmeanY
-17	tBodyAccJerkmeanZ
-18	tBodyAccJerkstdX
-19	tBodyAccJerkstdY
-20	tBodyAccJerkstdZ
-21	tBodyGyromeanX
-22	tBodyGyromeanY
-23	tBodyGyromeanZ
-24	tBodyGyrostdX
-25	tBodyGyrostdY
+* 9	tGravityAccmeanX
+* 10	tGravityAccmeanY
+* 11	tGravityAccmeanZ
+* 12	tGravityAccstdX
+* 13	tGravityAccstdY
+* 14	tGravityAccstdZ
+* 15	tBodyAccJerkmeanX
+* 16	tBodyAccJerkmeanY
+* 17	tBodyAccJerkmeanZ
+* 18	tBodyAccJerkstdX
+* 19	tBodyAccJerkstdY
+* 20	tBodyAccJerkstdZ
+* 21	tBodyGyromeanX
+* 22	tBodyGyromeanY
+* 23	tBodyGyromeanZ
+* 24	tBodyGyrostdX
+* 25	tBodyGyrostdY
 26	tBodyGyrostdZ
 27	tBodyGyroJerkmeanX
 28	tBodyGyroJerkmeanY
@@ -98,17 +103,6 @@ Here is the long list of variables included in the tidy dataset. There are more 
 80	fBodyBodyGyroJerkMagstd
 81	fBodyBodyGyroJerkMagmeanFreq
 
-This data was gathered from research that was performed at UCI. Most of the variable descriptions come from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
-and the READ.ME and features_info.txt file in the following link (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). 
-
-This Code Book will give descriptions about the transformations on the original data as the links above do a great job explaining the details of how the data was collected. 
-
-After the data was collected 
-It collects data from 30 
-volunteers
-
-
-##Data Description
 
 ##Transformation/Work to Clean Data from Raw Form
 This data set is a pared down version of the original found in the zip file included in the first section.
