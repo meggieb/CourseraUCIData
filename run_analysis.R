@@ -84,8 +84,13 @@ UCIMergedTestSet<-cbind(UCIDataSetTestXMeanSd,UCIDataSetTestSubject,UCIDataSetTe
 #merge the sets -
 UCIMergedSet<-rbind(UCIMergedTestSet,UCIMergedTrainSet)
 
-
+#create the tidy data set 
+#load the reshape2 library
 library(reshape2)
+
+#melt the data - ids are Subjects and ActionPerforming
 meltedData<-melt(UCIMergedSet, id=c("Subjects", "ActionPerforming"))
+
+#cast the data with two ids
 tidyData<-dcast(meltedData, Subjects + ActionPerforming ~ variable, mean)
 
