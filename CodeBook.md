@@ -16,18 +16,18 @@ volunteers
 This data set is a pared down version of the original found in the zip file included in the first section. 
 
 The original data set (can be found in the zip file) contained 10 separate files. Four of these files were used for explanation. These were 
-*features_info.txt - 
-*features.txt 
-*activity_labels.txt - 
-*README.txt - 
+* features_info.txt - 
+* features.txt 
+* activity_labels.txt - 
+* README.txt - 
 
 Six of these files were the raw data files: 2 X files, 2 Y files, and 2 subject files. 
-*X_test.txt - 
-*y_test.txt 
-*subject_test.txt -
-*X_train.txt - 
-*y_train.txt 
-*subject_train.txt -
+* X_test.txt - 
+* y_test.txt 
+* subject_test.txt -
+* X_train.txt - 
+* y_train.txt 
+* subject_train.txt -
 
 
 It only gathers the mean and standard deviation values in the data set. 
