@@ -14,8 +14,10 @@ Below shows the steps on how to recreate this tidy dataset
 5. THE END! 
 
 Now, here is how the run_analysis.R script works
-1. Gathers the X data from the training set 
+1. Gathers the X data from the training set using read.table
 2. Since our end goal only needs data for the mean and standard deviation, the next step is to subset the data. 
+In order to subset the data, there is a grep function to pull back the columns in the dataset that contain "mean" or "std". 
+This function also helps capture the column names for the data set. 
 3. Subsets the mean and standard deviation from this X set. 
 
 
