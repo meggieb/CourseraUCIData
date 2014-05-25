@@ -1,5 +1,5 @@
 #This is the code book 
-This data was gathered from research that was performed by another group and is available through UCI. The data shown is taken from an experiment with 30 individuals ages 19-48. These individuals were asked to perform 6 different activities and their motion (acceleration and velocity) was captured using the Samsung Galaxy S II (worn on their waist).  The data originates from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). To gather the data, download it through this zip (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). To read more about the data, read the README.txt file and features_info.txt file. 
+This data was gathered from research that was performed by another group and is available through UCI. The data shown is taken from an experiment with 30 individuals ages 19-48. These individuals were asked to perform 6 different activities and their motion metrics were captured using the Samsung Galaxy S II (worn on their waist).  The data originates from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). To gather the data, download it through this zip (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). To read more about the data, read the README.txt file and features_info.txt file. 
 
 This Code Book will give descriptions about the transformations on the original data as the links above do a great job explaining the details of how the original data was collected in the experiment. 
 
@@ -12,7 +12,7 @@ This data set shows the average of the mean and standard deviation measures for 
 Following is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the original raw format to the tidy data set.
 
 #####The following variables (Subjects and Action Performing) are the dimensions by which the metrics are grouped. 
-1 Subjects - A unique identifier for  individuals participating in the study
+1 Subjects - A unique identifier for individuals participating in the study
 2	ActionPerforming - The action the person is performing in the study. The options are: 
 * LAYING 
 * WALKING 
@@ -24,7 +24,7 @@ Following is the long list of variables included in the tidy dataset. There are 
 #####The following metrics are grouped by subject and ActionPerforming. These metrics are condensed by averaging the metrics in the original data set. 
 Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. 
 #####Why these metrics were chosen
-The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of referring to the mean, therefore; it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. In order to save space, I will give a key for what all these variables mean. More information is in the features.info.txt in the zip file in the original data
+The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of referring to the mean, therefore; it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. Also for saving space, I will give a key for what all these variables mean. More information is in the features.info.txt in the zip file in the original data
 * t - time domain signals
 * f - frequency domain signals
 * Acc - acceleration signals
@@ -121,7 +121,7 @@ The original data set had 561 metrics and this dataset only has 79. This tidy da
 
 
 ##Transformation/Work to Clean Data from Raw Form
-This data set is a pared down version of the original data set (can be found in the zip file in the first section).
+This data set is a pared down version of the original data set (original can be found in the zip file in the first section).
 
 The original data set contained 10 separate files that were used (there were more files but not all were not used). For each record in the files, the following data was captured
 * 561-feature vector of metrics 
