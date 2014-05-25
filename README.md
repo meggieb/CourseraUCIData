@@ -15,10 +15,17 @@ Below shows the steps on how to recreate this tidy dataset
 
 Now, here is how the run_analysis.R script works
  1. Gathers the X data from the training set using read.table
- 2. Since our end goal only needs data for the mean and standard deviation, the next step is to subset the data. 
-   3. In order to subset the data, there is a grep function to pull back the columns in the dataset that contain "mean" or "std". 
-This function also helps capture the column names for the data set. 
-3.Subsets the mean and standard deviation from this X set. 
+  2. Since our end goal only needs data for the mean and standard deviation, the next step is to subset the data. In order to subset the data, there is a grep function to pull back the columns in the dataset that contain "mean" or "std". This information is stored in a variable named matches.
+  3. Subsets the mean and standard deviation from this X set using the variable named matches.
+  4. This function also helps capture the column names for the data set. Using regular expressions, the parentheses and the dashes were extracted from the column names before the column were officially named.
+ 5. Now that the X data set is named for the training set, it needs to be merged with the subject information to see which subjects the information was captured for.
+  6. The Subject training set is stored in UCIDataSetTrainSubject and named "Subjects"
+ 7. The last piece of information is the Y training data set. It shows what action each subject was performing when the data was captured
+  7. The Y training dataset is stored in UCIDataSetTrainY
+  8. In order for the Y training dataset to make sense, the numbers need to be renamed to the actual actions (i.e. WALKING, SITTING, etc.)
+  9. It is matched using the match function. 
+  10. Once the match is completed, the data set is named "ActionPerforming"
+ 11. All the training datasets are now combined using cbind
 
 
 ##the training set 
