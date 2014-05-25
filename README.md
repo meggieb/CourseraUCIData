@@ -6,7 +6,7 @@ This is a repo based on the project for Coursera's Getting and Cleaning Data pro
 The overall goal is to create a tidy data set with the average of each variable for each activity and each subject. Each variable should only be metrics of the mean and standard deviation.
 
 Below shows the steps on how to recreate this tidy dataset
-* 1. Download the original data set through this link (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+ 1. Download the original data set through this link (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 2. Move the entire downloaded file into the working directory
 2. Copy and paste the run_analysis.R script into an RScript file in RStudio
 3. Highlight the entire script and click Run
