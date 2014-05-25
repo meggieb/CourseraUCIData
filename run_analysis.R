@@ -1,4 +1,6 @@
 #merge the training and test sets 
+
+
 ##the training set 
 
 #gather the X training set data
@@ -7,11 +9,12 @@ dim(UCIDataSetTrainX) - 7352
 
 #subset the mean and std from the X set
 toMatch <- c("mean", "std")
+UCIDataSetFeatures<-read.table("UCI HAR Dataset/features.txt", header=FALSE)
 matches <- unique (grep(paste(toMatch,collapse="|"), UCIDataSetFeatures[,2],))
 
 #clean up the columnNames 
 columnNames <- unique (grep(paste(toMatch,collapse="|"), UCIDataSetFeatures[,2], value=TRUE))
-r<-regexpr("\\(\\)|-",columnNames)
+r<-regexpr("\\(\\)",columnNames)
 m<-regmatches(columnNames,r)
 columnNames<-gsub("\\(\\)|-","", columnNames)
 UCIDataSetTrainXMeanSd<-UCIDataSetTrainX[,matches]
@@ -88,3 +91,4 @@ UCIMergedSet<-rbind(UCIMergedTestSet,UCIMergedTrainSet)
 library(reshape2)
 meltedData<-melt(UCIMergedSet, id=c("Subjects", "ActionPerforming"))
 tidyData<-dcast(meltedData, Subjects + ActionPerforming ~ variable, mean)
+
