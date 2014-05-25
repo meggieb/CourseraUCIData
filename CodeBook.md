@@ -24,7 +24,9 @@ Following is the long list of variables included in the tidy dataset. There are 
 #####The following metrics are grouped by subject and ActionPerforming. These metrics are condensed by averaging the metrics in the original data set. 
 Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. 
 #####Why these metrics were chosen
-The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of referring to the mean, therefore; it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. Also for saving space, I will give a key for what all these variables mean. More information is in the features.info.txt in the zip file in the original data
+The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of referring to the mean, therefore; it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. Also for saving space, I will give a key for what all these variables mean. More information is in the features.info.txt in the zip file in the original data. 
+
+All of these metrics are averages for each of the Subjects and ActionPerforming
 * t - time domain signals
 * f - frequency domain signals
 * Acc - acceleration signals
