@@ -18,12 +18,12 @@ Here is the long list of variables included in the tidy dataset. There are more 
 * STANDING
 
 ###The following metrics are grouped by subject and actionperforming. These metrics are averages of the original data set. Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. The reason for choosing only 79 variables is because these are the means and standard deviation metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well.
-3	tBodyAccmeanX
-4	tBodyAccmeanY
-5	tBodyAccmeanZ
-6	tBodyAccstdX
-7	tBodyAccstdY
-8	tBodyAccstdZ
+* 3	tBodyAccmeanX
+* 4	tBodyAccmeanY
+* 5	tBodyAccmeanZ
+* 6	tBodyAccstdX
+* 7	tBodyAccstdY
+* 8	tBodyAccstdZ
 9	tGravityAccmeanX
 10	tGravityAccmeanY
 11	tGravityAccmeanZ
