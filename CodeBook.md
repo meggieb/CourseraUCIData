@@ -1,19 +1,18 @@
 #This is the code book 
-This data was gathered from research that was performed at UCI. Most of the variable descriptions come from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
-and the READ.ME and features_info.txt file in the following link (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). 
+This data was gathered from research that was performed by another group and is available through UCI. The data shown is taken from an experiment with 30 individuals ages 19-48. These individuals were asked to perform 6 different activities and their motion (acceleration and velocity) was captured using the Samsung Galaxy S II (worn on their waist).  The data originates from this site (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). To gather the data, download it through this zip (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). To read more about the data, read the README.txt file and features_info.txt file. 
 
-This Code Book will give descriptions about the transformations on the original data as the links above do a great job explaining the details of how the data was collected. 
+This Code Book will give descriptions about the transformations on the original data as the links above do a great job explaining the details of how the original data was collected in the experiment. 
 
 ##Variables and Data Description
 ### The Tidy Data Set
-This data set shows the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and activities these subjects performed. There are 6 possible activities each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, or WALKINGUPSTAIRS. There were 30 total subjects. Therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the activity being performed, and the 79 motion metrics measured. Each motion metric is an average of the measurements from the original raw data. There were 10,299 distinct rows in the first data set before all the metrics were averaged to get 180 rows.  
+This data set shows the average of the mean and standard deviation measures for different motion metrics (79 metrics to be exact) for different combinations of subjects and activities these subjects performed. There are 6 possible activities each subject (person) could perform: LAYING, SITTING, STANDING, WALKING, WALKINGDOWNSTAIRS, or WALKINGUPSTAIRS. There were 30 total subjects; therefore, there are 180 rows (6 activities X 30 subjects). The tidy data set is a 180 X 81 matrix. Each row has the subject identifier, the activity being performed, and the 79 motion metrics measured. The original dataset was a 10,299 X 81 matrix; therefore, all these metrics were condensed by averaging each metric in order to get a summary matrix of 180 X 81.  
 
 
 ###More About the Variables
-Here is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the original raw format to the tidy data set.
+Following is the long list of variables included in the tidy dataset. There are more technical details of how the motion metrics were captured in the links above. The explanation here will only discuss how they were changed from the original raw format to the tidy data set.
 
 #####The following variables (Subjects and Action Performing) are the dimensions by which the metrics are grouped. 
-1 Subjects - The individuals participating in the study. It is a unique identifier for the individual.
+1 Subjects - A unique identifier for  individuals participating in the study
 2	ActionPerforming - The action the person is performing in the study. The options are: 
 * LAYING 
 * WALKING 
@@ -22,8 +21,10 @@ Here is the long list of variables included in the tidy dataset. There are more 
 * SITTING
 * STANDING
 
-#####The following metrics are grouped by subject and ActionPerforming. These metrics are averages of the original data set. 
-Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of naming the mean, therefore, it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. 
+#####The following metrics are grouped by subject and ActionPerforming. These metrics are condensed by averaging the metrics in the original data set. 
+Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmeanX for all the Subjects 1's who were WALKING. 
+#####Why these metrics were chosen
+The original data set had 561 metrics and this dataset only has 79. This tidy dataset only includes the measurements for the mean and the standard deviation and there are 79 of those metrics. There are metrics measuring the mean frequency as well. This is another way of referring to the mean, therefore; it is included in the dataset as well. The first few are in list format, but in order to save space, the rest are in a paragraph format. 
 * 3	tBodyAccmeanX
 * 4	tBodyAccmeanY
 * 5	tBodyAccmeanZ
@@ -106,9 +107,9 @@ Therefore, #3 tBodyAccmeanX for Subject 1 and WALKING is the average tBodyAccmea
 
 
 ##Transformation/Work to Clean Data from Raw Form
-This data set is a pared down version of the original found in the zip file included in the first section.
+This data set is a pared down version of the original data set (can be found in the zip file in the first section).
 
-The original data set (found in the zip file) contained 10 separate files that were used (there were more files but not all were not used). For each record in the files, the following data was captured
+The original data set contained 10 separate files that were used (there were more files but not all were not used). For each record in the files, the following data was captured
 * 561-feature vector of metrics 
 * ID of the activity being performed 
 * ID of the subject performing the activity
@@ -119,17 +120,17 @@ Out of the 10 files mentioned, four were used for explanation. These were
 * features_info.txt - Explanation of the 561 metrics captured on each subject
 * features.txt - Labels of the 561 metrics captured on each subject
 * activity_labels.txt - A lookup table for each action the subject performed. (i.e. 1=WALKING, 2=SITTING, etc.)
-* README.txt - Explaination of the data set and how the data was captured
+* README.txt - Explanation of the data set and how the data was captured
 
-Six of these files were the raw data files: 2 X files, 2 Y files, and 2 subject files. These files are not duplicates - the reason for the 2 of each were that 1 was a training set and the other was a test set. They needed to be combined into 1 set. 
+The last 6 files were the raw data files (shown below): 2 X files, 2 Y files, and 2 subject files. These files are not duplicates - the reason for the 2 of each were that 1 was a training set and the other was a test set. They needed to be combined into 1 set. 
 
-In order to combine them into 1 set, first the training data set (X_train.txt,y_train.txt, subject_train.txt) was combined together. The X_test data to the y_test data to the subject_test data.
-* X_test.txt - 
-* y_test.txt 
-* subject_test.txt -
-* X_train.txt - 
-* y_train.txt 
-* subject_train.txt -
+* X_test.txt - the 561-feature vector of metrics (test data)
+* y_test.txt - the activity ID being performed (test data)
+* subject_test.txt - the subject performing each activity (test data)
+* X_train.txt - the 561-feature vector of metrics (train data)
+* y_train.txt - the activity ID being performed (train data)
+* subject_train.txt - the subject performing each activity (train data)
 
+Following are the basic steps of how the data was combined - the exact steps of combining will be in the README file in this repo. 
 
-It only gathers the mean and standard deviation values in the data set. 
+In order to combine them into 1 set, the training data set was combined first (X_train.txt,y_train.txt, subject_train.txt). Then this set was pared down to only capture the mean and standard deviation metrics. The train data set had 7,352 rows of 81 variables. After the training set was combined, the test set was combined. The test data set had 2,947 rows of 81 variables. Then both data sets were combined. The final data set had 10,299 rows of 81 variables. To get to the 180 rows (subject AND activity combinations), the data needed to be melted and casted. After the melt and cast, the final tidy dataset was 180 rows by 81 columns. Two of the columns were identifiers (1 of the subject, the other of the activity). The other 79 were aggregate measures of the dataset (averages of the underlying dataset by subject and activity performed) 
